@@ -1,0 +1,7 @@
+# Pin the Node version. better-sqlite3 ships prebuilt binaries per Node major;
+# on a newer major than it supports, npm falls back to compiling from source,
+# which needs Python and a toolchain that are not in the default image.
+# Python and make are included below so a compile fallback still succeeds.
+
+[phases.setup]
+nixPkgs = ["nodejs_22", "python3", "gcc", "gnumake"]
